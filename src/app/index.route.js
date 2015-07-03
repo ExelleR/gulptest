@@ -10,12 +10,14 @@
       .when('/', {
         templateUrl: 'app/main/main.html',
         controller: 'MainController',
-        controllerAs: 'main'
+        controllerAs: 'main',
+        activetab: 'main'
       })
       .when('/about', {
         templateUrl: 'app/about/about.html',
         controller: 'AboutController',
-        controllerAs: 'about'
+        controllerAs: 'about',
+        activetab: 'about'
       })
       .otherwise({
         redirectTo: '/'

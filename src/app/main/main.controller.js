@@ -5,8 +5,15 @@
     .module('gulptest')
     .controller('MainController', MainController);
 
+
+
+
+
+
+
+
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, webDevTec, toastr, nameService ,$log, $scope) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -15,6 +22,16 @@
     vm.showToastr = showToastr;
 
     activate();
+
+    $log.log(nameService.name);
+    $log.log(nameService.namelenght());
+
+    $scope.name = nameService.name;
+    $scope.$watch('name', function(){
+
+      nameService.name = $scope.name;
+      
+    });
 
     function activate() {
       getWebDevTec();
